@@ -1,0 +1,13 @@
+package com.example.lesson03.dao;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.lesson03.model.Review;
+
+@Repository
+public interface ReviewDAO {
+
+	public Review selectReview(@Param("id") int id); //값이 여러개일때는 팜을 붙여야함 
+	
+}
