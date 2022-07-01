@@ -1,6 +1,13 @@
 package com.example.lesson05;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,5 +20,47 @@ public class Lesson05Controller {
 		
 		return	"lesson05/ex01";
 	}
+	
+	@RequestMapping("/lesson05/ex02")
+	public String ex02(Model model) {
+		
+		List<String> fruits = new ArrayList<>();
+		fruits.add("사과");
+		fruits.add("포도");
+		fruits.add("멜론");
+		fruits.add("딸기");
+		fruits.add("파인애플");
+		
+		//List<Map>
+		List<Map<String, Object>> users = new ArrayList<>();
+		Map<String,Object> user = new HashMap<>();
+		user.put("name", "정민교");
+		user.put("age", 30);
+		user.put("hobby", "독서");
+		users.add(user);
+		
+		user = new HashMap<>();
+		user.put("name", "서영빈");
+		user.put("age", 12);
+		user.put("hobby", "영화");
+		users.add(user);
+		
+		model.addAttribute("fruits", fruits); 
+		model.addAttribute("users", users);
+		
+		return	"lesson05/ex02";
+	}
+	
+	@RequestMapping("/lesson05/ex03")
+	public String ex03(Model model) {
+		
+		Date  date = new Date();
+		
+		model.addAttribute("today", date);
+		
+		return	"lesson05/ex03";
+	}
+	
+	
 	
 }
