@@ -114,7 +114,7 @@ $(document).ready(function(){
 			$.ajax({
 				//request
 				type:"POST"		//Request Method
-				, usl:"/lesson06/add_user"	//Action URL
+				, url:"/lesson06/add_user"	//Action URL
 				, data:{"name":name, "yyyymmdd":yyyymmdd, "email":email, "introduce":introduce}  //키 ,변수이름
 				
 				//response
