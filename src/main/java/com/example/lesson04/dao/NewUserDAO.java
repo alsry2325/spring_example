@@ -10,4 +10,6 @@ public interface NewUserDAO {
 	public int insertNewUser(NewUser newuser);
 	
 	public NewUser selectLastNewUser();
+	
+	public boolean existNewUserByName(String name);
 }
